@@ -118,33 +118,19 @@ window.addEventListener('load', () => {
     initializeSmoothScrolling();
 });
 
-// Form submission
+// Form submission with Formspree
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Simulate form submission
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
+        // Show loading state
         submitButton.textContent = 'Gönderiliyor...';
         submitButton.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
-            this.reset();
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+        // Let the form submit naturally to Formspree
+        // Formspree will handle the submission and redirect
     });
 }
 

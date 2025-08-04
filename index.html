@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genexia Laboratuvar ve Araştırma Ürünleri - Bilimin İhtiyacı Olan Her Şey</title>
-    <link rel="stylesheet" href="styles.css?v=1.8">
+            <link rel="stylesheet" href="styles.css?v=2.2">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -363,24 +363,24 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Adınız *" required>
+                            <input type="text" name="firstName" placeholder="Adınız *" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Soyadınız *" required>
+                            <input type="text" name="lastName" placeholder="Soyadınız *" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="E-posta *" required>
+                            <input type="email" name="email" placeholder="E-posta *" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Telefon">
+                            <input type="tel" name="phone" placeholder="Telefon">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Kurum/Kuruluş">
+                            <input type="text" name="company" placeholder="Kurum/Kuruluş">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Mesajınız *" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Mesajınız *" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Gönder</button>
                     </form>
