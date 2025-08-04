@@ -13,6 +13,34 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Mobile dropdown menu functionality
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const dropdownLink = dropdown.querySelector('.nav-link');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    
+    dropdownLink.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+            
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+        }
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar') && navMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
