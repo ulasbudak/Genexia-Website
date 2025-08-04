@@ -97,7 +97,7 @@ body {
 }
 
 .navbar {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
 }
 
 .nav-container {
@@ -118,7 +118,7 @@ body {
 .nav-logo {
     position: relative;
     min-width: 500px;
-    height: 150px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -139,7 +139,7 @@ body {
     max-height: 100%;
     width: auto;
     object-fit: contain;
-    transform: scale(3.9);
+    transform: scale(6.3);
 }
 
 .nav-menu {
@@ -847,14 +847,15 @@ body {
 
 .footer-logo {
     position: relative;
-    min-width: 400px !important;
-    height: 200px !important;
-    max-width: 400px !important;
-    max-height: 200px !important;
+    min-width: 675px !important;
+    height: 337px !important;
+    max-width: 675px !important;
+    max-height: 337px !important;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 1rem;
+    margin-left: -300px;
 }
 
 .footer-logo a {
@@ -869,10 +870,10 @@ body {
 }
 
 .footer-logo img {
-    max-height: 200px !important;
-    max-width: 400px !important;
-    width: 400px !important;
-    height: 200px !important;
+    max-height: 337px !important;
+    max-width: 675px !important;
+    width: 675px !important;
+    height: 337px !important;
     object-fit: contain;
 }
 
@@ -928,6 +929,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
+    color: #cbd5e0;
 }
 
 .contact-info-footer i {
@@ -957,18 +959,18 @@ body {
     
     .nav-logo {
         min-width: 150px;
-        height: 50px;
+        height: 40px;
     }
     
     .nav-logo img {
-        transform: scale(2.2);
+        transform: scale(3.6);
     }
     
     .footer-logo {
-        min-width: 300px !important;
-        height: 140px !important;
-        max-width: 300px !important;
-        max-height: 140px !important;
+        min-width: 510px !important;
+        height: 240px !important;
+        max-width: 510px !important;
+        max-height: 240px !important;
     }
     
     .hamburger {
@@ -1137,18 +1139,23 @@ body {
     /* Extra Small Mobile Styles */
     .nav-logo {
         min-width: 180px;
-        height: 50px;
+        height: 40px;
     }
     
     .nav-logo img {
-        transform: scale(2.2);
+        transform: scale(3.6);
     }
     
     .footer-logo {
-        min-width: 240px !important;
-        height: 120px !important;
-        max-width: 240px !important;
-        max-height: 120px !important;
+        min-width: 405px !important;
+        height: 202px !important;
+        max-width: 405px !important;
+        max-height: 202px !important;
+    }
+    
+    .contact-info-footer p {
+        color: #e2e8f0 !important;
+        font-weight: 500;
     }
     
     /* Hero Section Extra Small Mobile */
