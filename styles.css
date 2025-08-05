@@ -966,9 +966,9 @@ body {
     .nav-logo {
         min-width: 150px;
         height: 40px;
-        justify-content: flex-start;
-        margin-left: 0;
-        margin-right: 0;
+        justify-content: flex-end;
+        margin-left: auto;
+        margin-right: 10px;
     }
     
     .nav-logo img {
@@ -980,8 +980,8 @@ body {
         height: 240px !important;
         max-width: 510px !important;
         max-height: 240px !important;
-        justify-content: center;
-        margin-left: 0;
+        justify-content: flex-start;
+        margin-left: 20px;
     }
     
     .hamburger {
@@ -1158,9 +1158,9 @@ body {
     .nav-logo {
         min-width: 180px;
         height: 40px;
-        justify-content: flex-start;
-        margin-left: 0;
-        margin-right: 0;
+        justify-content: flex-end;
+        margin-left: auto;
+        margin-right: 10px;
     }
     
     .nav-logo img {
@@ -1172,8 +1172,8 @@ body {
         height: 202px !important;
         max-width: 405px !important;
         max-height: 202px !important;
-        justify-content: center;
-        margin-left: 0;
+        justify-content: flex-start;
+        margin-left: 20px;
     }
     
     .contact-info-footer p {
