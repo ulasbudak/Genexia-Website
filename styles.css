@@ -590,7 +590,7 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -643,7 +643,7 @@ body {
 
 .why-choose-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -698,7 +698,7 @@ body {
 
 .brands-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -831,8 +831,8 @@ body {
 
 .footer-logo {
     position: relative;
-    min-width: 60px !important;
-    height: 30px !important;
+    min-width: 5px !important;
+    height: 3px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -853,9 +853,10 @@ body {
 .footer-logo img {
     max-height: 100% !important;
     max-width: 100% !important;
-    width: 100% !important;
-    height: 100% !important;
+    width: auto !important;
+    height: auto !important;
     object-fit: contain !important;
+    transform: scale(0.05) !important;
 }
 
 .footer-section p {
@@ -936,8 +937,8 @@ body {
     }
     
     .footer-logo {
-        min-width: 40px !important;
-        height: 20px !important;
+        min-width: 4px !important;
+        height: 2px !important;
     }
     
     .hamburger {
@@ -1032,6 +1033,13 @@ body {
     .section-title {
         font-size: 2rem;
     }
+    
+    .services-grid,
+    .why-choose-grid,
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1045,8 +1053,8 @@ body {
     }
     
     .footer-logo {
-        min-width: 35px !important;
-        height: 17px !important;
+        min-width: 3px !important;
+        height: 2px !important;
     }
     
     .hero-container {
@@ -1104,7 +1112,9 @@ body {
     }
     
     .products-grid,
-    .services-grid {
+    .services-grid,
+    .why-choose-grid,
+    .brands-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
