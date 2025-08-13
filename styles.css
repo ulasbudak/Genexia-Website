@@ -642,19 +642,28 @@ body {
 }
 
 .why-choose-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .why-choose-item {
     background: linear-gradient(135deg, #f7fafc, #edf2f7);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid transparent;
+    width: 320px;
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .why-choose-item:hover {
@@ -697,15 +706,17 @@ body {
 }
 
 .brands-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .brand-item {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
     text-align: center;
     font-weight: 600;
@@ -713,6 +724,12 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid transparent;
+    width: 280px;
+    flex: 0 0 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
 }
 
 .brand-item:hover {
@@ -1048,6 +1065,10 @@ body {
     .nav-logo {
         min-width: 200px;
         height: 60px;
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        transform: translateX(75px) !important;
     }
     
     .nav-logo img {
@@ -1057,6 +1078,7 @@ body {
     .footer-logo {
         min-width: 80px;
         height: 35px;
+        transform: translateY(-14px);
     }
     .footer-logo img {
         max-height: 35px;
