@@ -139,7 +139,7 @@ body {
     max-height: 100%;
     width: auto;
     object-fit: contain;
-    transform: scale(1.95);
+    transform: scale(6.3);
 }
 
 .nav-menu {
@@ -831,8 +831,8 @@ body {
 
 .footer-logo {
     position: relative;
-    min-width: 60px;
-    height: 30px;
+    min-width: 8px;
+    height: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -932,12 +932,12 @@ body {
     }
     
     .nav-logo img {
-        transform: scale(1.65);
+        transform: scale(5.4);
     }
     
     .footer-logo {
-        min-width: 40px;
-        height: 20px;
+        min-width: 6px;
+        height: 3px;
     }
     
     .hamburger {
@@ -1041,12 +1041,12 @@ body {
     }
     
     .nav-logo img {
-        transform: scale(1.2);
+        transform: scale(4.8);
     }
     
     .footer-logo {
-        min-width: 35px;
-        height: 17px;
+        min-width: 5px;
+        height: 2px;
     }
     
     .hero-container {
