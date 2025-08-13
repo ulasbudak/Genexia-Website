@@ -1188,7 +1188,14 @@ body {
     }
     
     .contact-info-footer p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ebf8ff !important;
+    }
+    
+    .contact-info-footer p i {
+        color: #bee3f8 !important;
+        font-size: 1.1rem;
     }
     
     .contact-details p {
