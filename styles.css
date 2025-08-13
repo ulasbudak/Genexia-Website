@@ -793,6 +793,24 @@ body {
     line-height: 1.6;
 }
 
+.contact-details p a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #e1306c, #833ab4);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+}
+
+.contact-details p a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+    background: linear-gradient(135deg, #c13584, #667eea);
+}
+
 .contact-form {
     background: white;
     padding: 2rem;
