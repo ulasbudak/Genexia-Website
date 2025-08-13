@@ -90,19 +90,55 @@ window.addEventListener('load', () => {
     initializeSmoothScrolling();
 });
 
+<<<<<<< HEAD
 // Form submission (Formspree)
 const contactForm = document.querySelector('.contact-form form');
+=======
+// Form submission with email sending
+const contactForm = document.getElementById('contactForm');
+>>>>>>> 3b4f149 (İletişim formu Formspree ile direkt mail gönderimi eklendi)
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const formData = new FormData(this);
+<<<<<<< HEAD
+=======
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        // Create email content
+        const emailSubject = 'Genexia İletişim Formu - Yeni Mesaj';
+        const emailBody = `
+Yeni İletişim Formu Mesajı
+
+Ad: ${formObject.firstName}
+Soyad: ${formObject.lastName}
+E-posta: ${formObject.email}
+Telefon: ${formObject.phone || 'Belirtilmemiş'}
+Kurum/Kuruluş: ${formObject.company || 'Belirtilmemiş'}
+
+Mesaj:
+${formObject.message}
+
+---
+Bu mesaj Genexia web sitesi iletişim formundan gönderilmiştir.
+        `.trim();
+        
+        // Create mailto link
+        const mailtoLink = `mailto:info@genexialab.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Update button
+>>>>>>> 3b4f149 (İletişim formu Formspree ile direkt mail gönderimi eklendi)
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Gönderiliyor...';
         submitButton.disabled = true;
         
+<<<<<<< HEAD
         try {
             const response = await fetch(this.action, {
                 method: 'POST',
@@ -123,6 +159,58 @@ if (contactForm) {
         
         submitButton.textContent = originalText;
         submitButton.disabled = false;
+=======
+        // Create copyable message
+        const messageText = `
+Yeni İletişim Formu Mesajı
+
+Ad: ${formObject.firstName}
+Soyad: ${formObject.lastName}
+E-posta: ${formObject.email}
+Telefon: ${formObject.phone || 'Belirtilmemiş'}
+Kurum/Kuruluş: ${formObject.company || 'Belirtilmemiş'}
+
+Mesaj:
+${formObject.message}
+
+---
+Bu mesaj Genexia web sitesi iletişim formundan gönderilmiştir.
+        `.trim();
+        
+        // Show success message with copy option
+        const successMessage = `
+Mesajınız başarıyla hazırlandı!
+
+Mail adresi: info@genexialab.com
+Konu: Genexia İletişim Formu - Yeni Mesaj
+
+Mesaj içeriği kopyalandı. Mail uygulamanızda yapıştırabilirsiniz.
+        `;
+        
+        // Submit form to Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            } else {
+                throw new Error('Gönderim başarısız');
+            }
+        })
+        .catch(error => {
+            alert('Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+>>>>>>> 3b4f149 (İletişim formu Formspree ile direkt mail gönderimi eklendi)
     });
 }
 

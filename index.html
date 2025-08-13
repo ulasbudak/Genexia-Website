@@ -70,7 +70,7 @@
                 <p class="hero-subtitle">Genexia Laboratuvar ve Araştırma Ürünleri olarak, akademik dünyadan endüstriyel Ar-Ge projelerine kadar geniş bir yelpazede laboratuvar ihtiyaçlarını karşılayan, güvenilir ve yenilikçi bir tedarikçiyiz.</p>
                 <div class="hero-buttons">
                     <a href="#products" class="btn btn-primary" onclick="smoothScrollTo('products'); return false;">Ürünlerimizi Keşfedin</a>
-                    <a href="mailto:info@genexialab.com" class="btn btn-secondary">Bizimle İletişime Geçin</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="smoothScrollTo('contact'); return false;">Bizimle İletişime Geçin</a>
                 </div>
             </div>
         </div>
@@ -363,24 +363,24 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/mreaqvnv" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/movlbqol" method="POST">
                         <div class="form-group">
-                            <input type="text" name="ad" placeholder="Adınız *" required>
+                            <input type="text" name="firstName" placeholder="Adınız *" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="soyad" placeholder="Soyadınız *" required>
+                            <input type="text" name="lastName" placeholder="Soyadınız *" required>
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" placeholder="E-posta *" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="telefon" placeholder="Telefon">
+                            <input type="tel" name="phone" placeholder="Telefon">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="kurum" placeholder="Kurum/Kuruluş">
+                            <input type="text" name="company" placeholder="Kurum/Kuruluş">
                         </div>
                         <div class="form-group">
-                            <textarea name="mesaj" placeholder="Mesajınız *" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Mesajınız *" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Gönder</button>
                     </form>
