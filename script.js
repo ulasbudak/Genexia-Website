@@ -90,8 +90,8 @@ window.addEventListener('load', () => {
     initializeSmoothScrolling();
 });
 
-// Form submission
-const contactForm = document.querySelector('.contact-form form');
+// Form submission with email sending
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -103,20 +103,84 @@ if (contactForm) {
             formObject[key] = value;
         });
         
-        // Simulate form submission
+        // Create email content
+        const emailSubject = 'Genexia İletişim Formu - Yeni Mesaj';
+        const emailBody = `
+Yeni İletişim Formu Mesajı
+
+Ad: ${formObject.firstName}
+Soyad: ${formObject.lastName}
+E-posta: ${formObject.email}
+Telefon: ${formObject.phone || 'Belirtilmemiş'}
+Kurum/Kuruluş: ${formObject.company || 'Belirtilmemiş'}
+
+Mesaj:
+${formObject.message}
+
+---
+Bu mesaj Genexia web sitesi iletişim formundan gönderilmiştir.
+        `.trim();
+        
+        // Create mailto link
+        const mailtoLink = `mailto:info@genexialab.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Update button
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Gönderiliyor...';
         submitButton.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
-            this.reset();
+        // Create copyable message
+        const messageText = `
+Yeni İletişim Formu Mesajı
+
+Ad: ${formObject.firstName}
+Soyad: ${formObject.lastName}
+E-posta: ${formObject.email}
+Telefon: ${formObject.phone || 'Belirtilmemiş'}
+Kurum/Kuruluş: ${formObject.company || 'Belirtilmemiş'}
+
+Mesaj:
+${formObject.message}
+
+---
+Bu mesaj Genexia web sitesi iletişim formundan gönderilmiştir.
+        `.trim();
+        
+        // Show success message with copy option
+        const successMessage = `
+Mesajınız başarıyla hazırlandı!
+
+Mail adresi: info@genexialab.com
+Konu: Genexia İletişim Formu - Yeni Mesaj
+
+Mesaj içeriği kopyalandı. Mail uygulamanızda yapıştırabilirsiniz.
+        `;
+        
+        // Submit form to Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            } else {
+                throw new Error('Gönderim başarısız');
+            }
+        })
+        .catch(error => {
+            alert('Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, 2000);
+        });
     });
 }
 
