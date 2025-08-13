@@ -13,34 +13,6 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Mobile dropdown menu functionality
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    const dropdownLink = dropdown.querySelector('.nav-link');
-    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-    
-    dropdownLink.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('active');
-                }
-            });
-        }
-    });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar') && navMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-});
-
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
@@ -118,19 +90,33 @@ window.addEventListener('load', () => {
     initializeSmoothScrolling();
 });
 
-// Form submission with Formspree
+// Form submission
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        // Simulate form submission
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
-        // Show loading state
         submitButton.textContent = 'Gönderiliyor...';
         submitButton.disabled = true;
         
-        // Let the form submit naturally to Formspree
-        // Formspree will handle the submission and redirect
+        // Simulate API call
+        setTimeout(() => {
+            alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+            this.reset();
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }, 2000);
     });
 }
 
