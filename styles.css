@@ -1145,6 +1145,17 @@ body {
     .contact-info-footer p {
         font-size: 0.9rem;
     }
+    
+    .contact-details p {
+        color: #2d3748 !important;
+        font-weight: 600 !important;
+    }
+    
+    .contact-item .contact-details p {
+        color: #1a365d !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+    }
 }
 
 /* Animations */
