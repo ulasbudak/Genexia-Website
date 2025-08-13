@@ -831,8 +831,8 @@ body {
 
 .footer-logo {
     position: relative;
-    min-width: 0.625px;
-    height: 0.3125px;
+    min-width: 60px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -936,8 +936,8 @@ body {
     }
     
     .footer-logo {
-        min-width: 20px;
-        height: 10px;
+        min-width: 40px;
+        height: 20px;
     }
     
     .hamburger {
@@ -1045,8 +1045,8 @@ body {
     }
     
     .footer-logo {
-        min-width: 30px;
-        height: 15px;
+        min-width: 35px;
+        height: 17px;
     }
     
     .hero-container {
