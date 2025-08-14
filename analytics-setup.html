@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Kurulum Rehberi - Genexia</title>
+</head>
+<body>
+    <h1>Google Analytics ve Google Tag Manager Kurulum Rehberi</h1>
+    
+    <h2>1. Google Analytics 4 (GA4) Kurulumu</h2>
+    <p>Google Analytics hesabı oluşturun ve aşağıdaki kodu &lt;head&gt; bölümüne ekleyin:</p>
+    
+    <pre><code>
+&lt;!-- Google Analytics 4 --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+&lt;/script&gt;
+    </code></pre>
+    
+    <h2>2. Google Tag Manager Kurulumu</h2>
+    <p>Google Tag Manager hesabı oluşturun ve aşağıdaki kodları ekleyin:</p>
+    
+    <h3>Head bölümüne:</h3>
+    <pre><code>
+&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+    </code></pre>
+    
+    <h3>Body açılış tag'inden hemen sonra:</h3>
+    <pre><code>
+&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+    </code></pre>
+    
+    <h2>3. Önemli Notlar</h2>
+    <ul>
+        <li>GA_MEASUREMENT_ID ve GTM-XXXXXXX yerine kendi ID'lerinizi yazın</li>
+        <li>Bu kodları index.html dosyasına ekleyin</li>
+        <li>GDPR uyumluluğu için cookie consent banner'ı ekleyin</li>
+        <li>Google Search Console'a sitenizi kaydedin</li>
+    </ul>
+</body>
+</html>
