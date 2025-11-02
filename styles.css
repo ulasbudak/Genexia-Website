@@ -1005,6 +1005,36 @@ body {
         left: 0;
     }
     
+    /* Mobile dropdown styles */
+    .dropdown-menu {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        padding: 0;
+        transition: all 0.3s ease;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.3);
+        margin-top: 0;
+    }
+    
+    .dropdown.dropdown-active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        padding: 0.5rem 0;
+    }
+    
+    .dropdown-menu li {
+        padding-left: 1rem;
+    }
+    
+    .dropdown-menu a {
+        padding: 0.75rem 1rem;
+    }
+    
     .hero-container {
         flex-direction: column;
         text-align: center;

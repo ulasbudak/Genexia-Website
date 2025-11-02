@@ -7,11 +7,62 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+// Mobile dropdown toggle
+document.querySelectorAll('.dropdown > .nav-link').forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+        // Only prevent default on mobile
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const dropdown = this.parentElement;
+            const isActive = dropdown.classList.contains('dropdown-active');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('dropdown-active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('dropdown-active', !isActive);
+        }
+    });
+});
+
+// Close mobile menu when clicking on a non-dropdown link
+document.querySelectorAll('.nav-link').forEach(n => {
+    n.addEventListener('click', function() {
+        // Only close menu if it's not a dropdown link
+        if (!this.closest('.dropdown') || window.innerWidth > 768) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
+// Close dropdown when clicking on dropdown menu links
+document.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.querySelectorAll('.dropdown').forEach(d => {
+            d.classList.remove('dropdown-active');
+        });
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.classList.remove('dropdown-active');
+            });
+        }
+    }
+});
 
 // Header scroll effect
 window.addEventListener('scroll', () => {
