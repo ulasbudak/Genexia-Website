@@ -119,7 +119,7 @@
             <p class="section-subtitle text-center">Araştırmalarınız için ihtiyacınız olan tüm ürünler</p>
             
             <div class="products-grid">
-                <div class="product-card">
+                <div id="sarf-malzemeleri" class="product-card">
                     <div class="product-image">
                         <img src="sarf-malzemeleri.jpg" alt="Sarf Malzemeleri">
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div id="cam-plastik" class="product-card">
                     <div class="product-image">
                         <img src="cam-plastik.jpg" alt="Cam & Plastik Malzemeler">
                     </div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div id="lab-cihazlari" class="product-card">
                     <div class="product-image">
                         <img src="lab-cihazlari.jpg" alt="Laboratuvar Cihazları">
                     </div>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div id="reaktifler" class="product-card">
                     <div class="product-image">
                         <img src="reaktifler-kitler.jpg" alt="Reaktifler ve Kitler">
                     </div>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div id="olcum-aletleri" class="product-card">
                     <div class="product-image">
                         <img src="olcum-analiz.jpg" alt="Ölçüm & Analiz Aletleri">
                     </div>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div id="koruyucu-urunler" class="product-card">
                     <div class="product-image">
                         <img src="koruyucu-temizlik.jpg" alt="Koruyucu & Temizlik Ürünleri">
                     </div>
@@ -363,24 +363,24 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/mreaqvnv" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Adınız *" required>
+                            <input type="text" name="ad" placeholder="Adınız *" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Soyadınız *" required>
+                            <input type="text" name="soyad" placeholder="Soyadınız *" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="E-posta *" required>
+                            <input type="email" name="email" placeholder="E-posta *" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Telefon">
+                            <input type="tel" name="telefon" placeholder="Telefon">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Kurum/Kuruluş">
+                            <input type="text" name="kurum" placeholder="Kurum/Kuruluş">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Mesajınız *" rows="5" required></textarea>
+                            <textarea name="mesaj" placeholder="Mesajınız *" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Gönder</button>
                     </form>
@@ -394,7 +394,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class=",-logo">
+                    <div class="footer-logo">
                         <a href="#home" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'}); return false;">
                             <img src="genexia-logo.png" alt="Genexia Logo" class="logo">
                         </a>

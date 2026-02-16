@@ -90,33 +90,39 @@ window.addEventListener('load', () => {
     initializeSmoothScrolling();
 });
 
-// Form submission
+// Form submission (Formspree)
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Get form data
         const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Simulate form submission
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Gönderiliyor...';
         submitButton.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
-            this.reset();
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+        try {
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                this.reset();
+            } else {
+                const data = await response.json();
+                alert(data.error || 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya info@genexialab.com adresine e-posta gönderin.');
+            }
+        } catch (error) {
+            alert('Bağlantı hatası. Lütfen internet bağlantınızı kontrol edin veya info@genexialab.com adresine e-posta gönderin.');
+        }
+        
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
     });
 }
 

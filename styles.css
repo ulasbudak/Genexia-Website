@@ -831,11 +831,11 @@ body {
 
 .footer-logo {
     position: relative;
-    min-width: 5px !important;
-    height: 3px !important;
+    min-width: 120px;
+    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 1rem;
 }
 
@@ -851,12 +851,9 @@ body {
 }
 
 .footer-logo img {
-    max-height: 100% !important;
-    max-width: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    transform: scale(0.05) !important;
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .footer-section p {
@@ -937,8 +934,11 @@ body {
     }
     
     .footer-logo {
-        min-width: 4px !important;
-        height: 2px !important;
+        min-width: 100px;
+        height: 40px;
+    }
+    .footer-logo img {
+        max-height: 40px;
     }
     
     .hamburger {
@@ -1053,8 +1053,11 @@ body {
     }
     
     .footer-logo {
-        min-width: 3px !important;
-        height: 2px !important;
+        min-width: 80px;
+        height: 35px;
+    }
+    .footer-logo img {
+        max-height: 35px;
     }
     
     .hero-container {
