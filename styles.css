@@ -902,6 +902,8 @@ body {
 @media (min-width: 1024px) {
     .footer-logo {
         height: 120px;
+        margin-top: -15px;
+        margin-bottom: 6px;
     }
 
     .footer-logo img {
@@ -1222,14 +1224,34 @@ body {
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .footer-section {
+        min-width: 0;
+        /* Allow shrinking */
+        word-wrap: break-word;
+    }
+
+    /* Logo section spans full width */
+    .footer-section:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+        /* Keep logo centered */
+    }
+
+    /* Contact section spans full width */
+    .footer-section:last-child {
+        grid-column: 1 / -1;
     }
 
     .footer-section h3 {
         font-size: 1.1rem;
     }
 
+    /* Center social links again since first child is centered */
     .social-links {
         justify-content: center;
     }
