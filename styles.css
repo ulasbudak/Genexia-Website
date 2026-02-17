@@ -993,8 +993,8 @@ body {
         height: auto;
         min-width: auto;
         margin-bottom: 1rem;
-        /* Mobile: shift logo 80px right without affecting layout */
-        transform: translateX(80px);
+        /* Mobile: shift logo 110px right without affecting layout */
+        transform: translateX(110px);
     }
 
     .footer-logo img {
@@ -1156,7 +1156,7 @@ body {
         min-width: auto;
         height: auto;
         /* Keep the same visual offset as other mobile sizes */
-        transform: translateX(80px);
+        transform: translateX(110px);
         margin-bottom: 1rem;
     }
 
