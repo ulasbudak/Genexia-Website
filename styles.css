@@ -993,10 +993,17 @@ body {
         height: auto;
         min-width: auto;
         margin-bottom: 1rem;
+        /* Mobile: shift logo 30px right without affecting layout */
+        transform: translateX(30px);
     }
 
     .footer-logo img {
         height: 40px;
+    }
+
+    /* Mobile: push contact section further down */
+    .footer-section:last-child {
+        margin-top: 24px;
     }
 
     .hamburger {
@@ -1148,12 +1155,17 @@ body {
     .footer-logo {
         min-width: auto;
         height: auto;
-        transform: none;
+        /* Keep the same visual offset as other mobile sizes */
+        transform: translateX(30px);
         margin-bottom: 1rem;
     }
 
     .footer-logo img {
         height: 35px;
+    }
+
+    .footer-section:last-child {
+        margin-top: 24px;
     }
 
     .hero-container {
