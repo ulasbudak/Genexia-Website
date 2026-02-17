@@ -898,6 +898,17 @@ body {
     object-fit: contain;
 }
 
+/* Desktop: enlarge footer logo without changing layout elsewhere */
+@media (min-width: 1024px) {
+    .footer-logo {
+        height: 120px;
+    }
+
+    .footer-logo img {
+        max-height: 120px;
+    }
+}
+
 .footer-section p {
     color: #cbd5e0;
     line-height: 1.6;
@@ -1259,4 +1270,8 @@ body {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
-} 
+    /* Keep sizing consistent across browsers/devices */
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
